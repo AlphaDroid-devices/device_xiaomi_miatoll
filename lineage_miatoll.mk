@@ -29,8 +29,16 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 # Inherit some common device props
-TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_ENABLE_BLUR := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_SUPPORTS_CALL_RECORDING := true
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
-TARGET_INCLUDE_LIVE_WALLPAPERS := false
+TARGET_USE_GOOGLE_TELEPHONY := false
+
+# MiuiCamera
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+
+# AlphaDroid Build Type & Maintainer stuff
+ALPHA_MAINTAINER := Ihsan&Atharva
+ALPHA_BUILD_TYPE := OFFICIAL
+
+# SOC
+PROCESSOR_MODEL := SD720G
