@@ -19,6 +19,9 @@ $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/MiuiCamera.mk)
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Dolby Atmos
+$(call inherit-product, vendor/sony/dolby/dolby.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
